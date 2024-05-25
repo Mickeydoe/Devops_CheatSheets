@@ -1,0 +1,213 @@
+Here's a comprehensive Kubernetes cheat sheet detailing the most common commands and their functionalities:
+
+### Kubernetes Commands Cheat Sheet
+
+#### kubectl Basics
+
+- **Get Cluster Info:**
+  ```sh
+  kubectl cluster-info
+  ```
+  Displays information about the Kubernetes cluster.
+
+- **Get Nodes:**
+  ```sh
+  kubectl get nodes
+  ```
+  Lists all nodes in the cluster.
+
+- **Get Pods:**
+  ```sh
+  kubectl get pods
+  ```
+  Lists all pods in the default namespace.
+
+- **Get Pods in All Namespaces:**
+  ```sh
+  kubectl get pods --all-namespaces
+  ```
+  Lists all pods in all namespaces.
+
+- **Get Services:**
+  ```sh
+  kubectl get services
+  ```
+  Lists all services in the default namespace.
+
+- **Get Deployments:**
+  ```sh
+  kubectl get deployments
+  ```
+  Lists all deployments in the default namespace.
+
+- **Get Namespaces:**
+  ```sh
+  kubectl get namespaces
+  ```
+  Lists all namespaces in the cluster.
+
+#### Creating Resources
+
+- **Create a Resource from a File:**
+  ```sh
+  kubectl apply -f filename.yaml
+  ```
+  Creates resources defined in a YAML file.
+
+- **Create a Deployment:**
+  ```sh
+  kubectl create deployment deployment_name --image=image_name
+  ```
+  Creates a deployment with the specified image.
+
+- **Expose a Pod or Deployment:**
+  ```sh
+  kubectl expose deployment deployment_name --type=NodePort --port=8080
+  ```
+  Exposes a deployment as a service with NodePort type.
+
+#### Updating Resources
+
+- **Update a Resource from a File:**
+  ```sh
+  kubectl apply -f filename.yaml
+  ```
+  Updates resources defined in a YAML file.
+
+- **Set Image of a Deployment:**
+  ```sh
+  kubectl set image deployment/deployment_name container_name=image_name
+  ```
+  Updates the image of a container in a deployment.
+
+#### Deleting Resources
+
+- **Delete a Resource:**
+  ```sh
+  kubectl delete -f filename.yaml
+  ```
+  Deletes resources defined in a YAML file.
+
+- **Delete a Pod:**
+  ```sh
+  kubectl delete pod pod_name
+  ```
+  Deletes the specified pod.
+
+- **Delete a Deployment:**
+  ```sh
+  kubectl delete deployment deployment_name
+  ```
+  Deletes the specified deployment.
+
+#### Describing Resources
+
+- **Describe a Node:**
+  ```sh
+  kubectl describe node node_name
+  ```
+  Describes detailed information about a node.
+
+- **Describe a Pod:**
+  ```sh
+  kubectl describe pod pod_name
+  ```
+  Describes detailed information about a pod.
+
+- **Describe a Deployment:**
+  ```sh
+  kubectl describe deployment deployment_name
+  ```
+  Describes detailed information about a deployment.
+
+#### Logs and Debugging
+
+- **View Pod Logs:**
+  ```sh
+  kubectl logs pod_name
+  ```
+  Retrieves logs from a pod.
+
+- **View Logs for a Specific Container in a Pod:**
+  ```sh
+  kubectl logs pod_name -c container_name
+  ```
+  Retrieves logs from a specific container in a pod.
+
+- **Execute a Command in a Pod:**
+  ```sh
+  kubectl exec pod_name -- command
+  ```
+  Executes a command in a container of the specified pod.
+
+- **Get Events:**
+  ```sh
+  kubectl get events
+  ```
+  Lists all events in the default namespace.
+
+#### Port Forwarding
+
+- **Forward a Local Port to a Pod:**
+  ```sh
+  kubectl port-forward pod_name local_port:remote_port
+  ```
+  Forwards a local port to a port on a pod.
+
+#### Config and Context Management
+
+- **View Current Context:**
+  ```sh
+  kubectl config current-context
+  ```
+  Displays the current Kubernetes context.
+
+- **Set Context:**
+  ```sh
+  kubectl config use-context context_name
+  ```
+  Switches to the specified context.
+
+- **View All Contexts:**
+  ```sh
+  kubectl config get-contexts
+  ```
+  Lists all available contexts.
+
+#### Resource Management
+
+- **Scale a Deployment:**
+  ```sh
+  kubectl scale deployment deployment_name --replicas=3
+  ```
+  Scales a deployment to the specified number of replicas.
+
+- **Autoscale a Deployment:**
+  ```sh
+  kubectl autoscale deployment deployment_name --min=2 --max=5 --cpu-percent=80
+  ```
+  Autoscale a deployment based on CPU utilization.
+
+#### Resource Definition and Configuration
+
+- **Edit a Resource:**
+  ```sh
+  kubectl edit deployment deployment_name
+  ```
+  Opens the resource definition in the default editor for editing.
+
+- **View Resource Definition:**
+  ```sh
+  kubectl get deployment deployment_name -o yaml
+  ```
+  Displays the YAML configuration of the specified deployment.
+
+#### Resource Types
+
+- **List All Resource Types:**
+  ```sh
+  kubectl api-resources
+  ```
+  Lists all available resource types in the cluster.
+
+This cheat sheet covers a wide range of kubectl commands to help you manage and interact with your Kubernetes clusters effectively.
