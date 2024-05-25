@@ -1,0 +1,86 @@
+### How to Leave Insert Mode and Save in Vim
+
+In Vim, you can leave insert mode and save your changes by performing the following steps:
+
+1. **Leave Insert Mode**:
+   - Press `Esc` to leave insert mode and return to normal mode.
+
+2. **Save and Exit**:
+   - To save and exit the file, type `:wq` and press `Enter`.
+
+### Outline of Basic Vim Commands
+
+Here's an outline of some essential Vim commands, categorized by their mode and functionality:
+
+#### Normal Mode Commands
+
+- **Movement**:
+  - `h`: Move left
+  - `j`: Move down
+  - `k`: Move up
+  - `l`: Move right
+  - `w`: Move forward to the start of the next word
+  - `b`: Move backward to the start of the previous word
+  - `0`: Move to the beginning of the line
+  - `$`: Move to the end of the line
+  - `gg`: Move to the beginning of the file
+  - `G`: Move to the end of the file
+
+- **Editing**:
+  - `i`: Enter insert mode before the cursor
+  - `a`: Enter insert mode after the cursor
+  - `o`: Open a new line below and enter insert mode
+  - `O`: Open a new line above and enter insert mode
+  - `x`: Delete the character under the cursor
+  - `dd`: Delete the current line
+  - `yy`: Copy (yank) the current line
+  - `p`: Paste after the cursor
+  - `u`: Undo the last change
+  - `Ctrl-r`: Redo the last undone change
+
+- **Visual Mode**:
+  - `v`: Enter visual mode (character-wise selection)
+  - `V`: Enter visual line mode (line-wise selection)
+  - `Ctrl-v`: Enter visual block mode (block-wise selection)
+
+#### Insert Mode Commands
+
+- **Basic Editing**:
+  - `Esc`: Exit insert mode and return to normal mode
+  - `Ctrl-h`: Delete the character before the cursor
+  - `Ctrl-w`: Delete the word before the cursor
+  - `Ctrl-u`: Delete everything before the cursor on the current line
+
+#### Command-Line Mode Commands
+
+- **Saving and Exiting**:
+  - `:w`: Save the current file
+  - `:q`: Quit Vim (close the file)
+  - `:wq`: Save and quit
+  - `:q!`: Quit without saving
+  - `:x`: Save and quit (similar to `:wq`)
+  - `:w filename`: Save the current file with a new name
+
+- **File Operations**:
+  - `:e filename`: Open a new file
+  - `:bnext` or `:bn`: Move to the next buffer
+  - `:bprev` or `:bp`: Move to the previous buffer
+  - `:bd`: Close the current buffer
+
+- **Searching and Replacing**:
+  - `/pattern`: Search forward for `pattern`
+  - `?pattern`: Search backward for `pattern`
+  - `n`: Repeat the last search in the same direction
+  - `N`: Repeat the last search in the opposite direction
+  - `:%s/old/new/g`: Replace all occurrences of `old` with `new` in the file
+  - `:%s/old/new/gc`: Replace all occurrences with confirmation
+
+- **Window Management**:
+  - `:split filename` or `:sp filename`: Split the window horizontally and open `filename`
+  - `:vsplit filename` or `:vs filename`: Split the window vertically and open `filename`
+  - `Ctrl-w s`: Split the window horizontally
+  - `Ctrl-w v`: Split the window vertically
+  - `Ctrl-w w`: Switch between windows
+  - `Ctrl-w q`: Quit the current window
+
+These are some of the most commonly used Vim commands. Vim has a rich set of features and commands, and mastering them can greatly enhance your text editing efficiency. For more advanced commands and customization, you can refer to the Vim documentation by typing `:help` within Vim.
